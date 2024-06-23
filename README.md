@@ -1,96 +1,102 @@
-# Product Listing Page
+# E-commerce Application
 
-A clean and responsive product listing page built with Next.js, Tailwind CSS, and a mock API. This application displays a list of products, includes a search bar to filter products by name, and shows basic product details in a modal when a product is clicked. The layout is designed to work well on all devices.
+This is a full-featured e-commerce application built using **Next.js** and **TailwindCSS**. It includes essential functionalities such as product search with pagination and sorting, a shopping cart, and integration with Stripe for payments. The state management is handled by **Redux**, and **SWR** is used for API calls.
 
 ## Table of Contents
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Future Enhancements](#future-enhancements)
+6. [Contributing](#contributing)
 
 ## Features
 
-- Display a list of products fetched from a mock API.
-- Search functionality to filter products by name.
-- Modal to show basic product details when a product is clicked.
-- Fully responsive design that works well on all devices.
+- **Home Page**: Displays a selection of products and promotions.
+- **Products Search Results Page**: Allows users to search for products with pagination and sorting options.
+- **Cart Page**: Enables users to view and manage their selected items.
+- **Stripe Payment Page**: Integrates with Stripe for secure payment processing.
+- **Success Page**: Confirms successful orders.
+- **Cancel Page**: Handles order cancellations.
 
 ## Technologies Used
 
-- [Next.js](https://nextjs.org/): React framework for server-rendered or statically-exported React apps.
-- [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for rapid UI development.
-- [FakeStore API](https://fakestoreapi.com/products): Mock API used to fetch product data.
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **TailwindCSS**: A utility-first CSS framework for rapid UI development.
+- **Redux**: A state management library for JavaScript applications.
+- **SWR**: A React Hooks library for data fetching.
+- **Stripe**: A payment processing platform.
 
 ## Installation
 
+To get started with the project, follow these steps:
+
 1. Clone the repository:
+    ```sh
+    git clone https://github.com/Vishnu844/ecommerce-application.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd ecommerce-application
+    ```
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+4. Create a `.env.local` file in the root directory and add your Stripe API keys:
+    ```sh
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-publishable-key
+    STRIPE_SECRET_KEY=your-secret-key
+    ```
+5. Run the development server:
+    ```sh
+    npm run dev
+    ```
+6. Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the application in action.
 
-   ```bash
-   git clone https://github.com/your-username/product-listing-page.git
-   cd product-listing-page
+## Usage
 
-   ```
+### Home Page
 
-2. Install Dependencies
+The home page showcases featured products and promotions. Users can navigate to the product search results page or view details of specific products.
 
-   ```bash
-   npm install
+### Products Search Results Page
 
-   ```
+Users can search for products using keywords. The search results can be paginated and sorted by different criteria such as price, popularity, and ratings.
 
-3. Run the development server
+### Cart Page
 
-   ```bash
-   npm run dev
+Users can add products to their cart and manage the quantities of each item. The cart page displays the total price and allows users to proceed to checkout.
 
-   ```
+### Stripe Payment Page
 
-4. Open your browser and visit `http://localhost:3000` to see the app in action.
+The application integrates with Stripe for handling payments. Users can enter their payment details securely and complete their purchase.
 
-### Usage
+### Success and Cancel Pages
 
-1. **Viewing Products**
+- **Success Page**: Displays a confirmation message and order details after a successful payment.
+- **Cancel Page**: Informs the user that the payment process was cancelled and provides options to retry or return to the home page.
 
-- Products will be displayed in a grid format on the homepage.
+## State Management
 
-2. **Search**
+The application uses Redux for managing the global state. This includes the state of the cart, user authentication, and product data.
 
-- Use the search bar at the top to filter products by their name.
+## Data Fetching
 
-3. **Product Details**
+The product search results page uses SWR (stale-while-revalidate) for data fetching. This ensures that the page is always displaying the most up-to-date product information.
 
-- Click on any product to open a modal with more details about the product.
+## Dummy Data
 
-## Project Structure
+Currently, the application uses dummy data to populate the product listings. This can be replaced with real data from an API or a database in the future.
 
-```plaintext
-product-list-page/
+## Future Enhancements
 
-├── public/
-├── src\app
-|   ├── components/
-|   |    ├── loading.js
-|   |    ├── modal.js
-|   |    ├── product.js
-|   |    ├── rating.js
-│   ├── favicon.ico
-│   ├── global.css
-|   ├── layout.js
-|   ├── loading.js
-|   ├── page.js
-│
-├── jsconfig.json
-├── next.config.mjs
-├── package-lock.json
-├── package.json
-├── postcss.config.mjs
-├── README.md
-├── tailwind.config.js
-```
+- Add user registration, authentication and authorization using OAuth.
+- Implement data using custom backend.
+- Enhancements in user interface by adding lazy loading, type-ahead search bar, popups, snackbars etc.
+- Enable user to change profile information, display monthly and yearly purchases information, metrics and data visualization with charts.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+Contributions are welcome! If you have any suggestions or improvements, feel free to open a pull request or issue.
